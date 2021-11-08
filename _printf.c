@@ -10,9 +10,10 @@ int _printf(const char *format, ...)
 	int i = 0, j = 0;
 	int *indi = &i, *indj = &j;
 	char buffer[4000], tmp[250];
+	char * strtmp = NULL;
 	void (*selectf)(va_list, char *, char *, char *, int *);
 
-	if (format == NULL || arg == NULL || (format[0] = '%' && format[1] = '\0'))
+	if (format == NULL || arg == NULL || (format[0] == '%' && format[1] == '\0'))
 	{
 		return (-1);
 	}
@@ -29,7 +30,23 @@ int _printf(const char *format, ...)
 		{
 			(*indi)++;
 
-			selectf = 
+			selectf = get_functions((char *)format, *indi);
+
+			if (selectf == NULL)
+			{
+				(*indi)--;
+				buffer[*indj] = '%';
+			}
+
+			else
+			{
+				selectf(arg, buffer, tmp, strtmp, indj);
+			}
 		}
+		(*indi)++;
+		(*indj)++;
 	}
+	fwrite(buffer, *indj, 1, stdout);
+	va_end(arg);
+	return (*indj);
 }
