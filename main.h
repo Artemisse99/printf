@@ -5,6 +5,8 @@
 #include <stdarg.h>
 int _printf(const char *format, ...);
 int _putchar(char c);
+void(*get_functions(char *format, int i))(va_list, char *, char *, char *, int*);
+void _printf_c(va_list arg, char *buffer, char *strtmp, char *tmp, int *indj);
 
 typedef struct clasification
 {
