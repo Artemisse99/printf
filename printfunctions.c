@@ -9,12 +9,12 @@
  * @buffer: jhvjhjh
  * @strmp: hikjhojh
  */
-void _printf_c(va_list arguments, char *buffer, char *strtmp, char *tmp,
-		  int *j)
+void _printf_c(va_list arg, char *buffer, char *strtmp, char *tmp,
+		  int *indj)
 {
-	arguments = arguments;
-	strmp = strmp;
+	arg = arg;
+	strtmp = strtmp;
 	tmp = tmp;
 
-	buffer[j] = (char)va_arg(arg, int);
+	buffer[*indj] = (char)va_arg(arg, int);
 }
