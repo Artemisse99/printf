@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 #include <stdarg.h>
 #include <stdlib.h>
 #include <string.h>
@@ -11,15 +11,15 @@
  */
 void(*get_functions(char *format, int i))(va_list, char *, char *, char *, int*)
 {
-	int v;
+	int v = 0;
 	clf options[] = {
-		{"c", _printf-c},
-		{"s", _printf-s},
-		{"%", _printf-per},
+		{"c", _printf_c},
+		/**{"s", _printf-s},
+		   {"%", _printf-per},**/
 		{NULL, NULL}};
 	while(options[v].op != NULL)
 	{
-		if(options[v].op == format[v])
+		if(*options[v].op == format[i])
 		{
 			return (*options[v].funct);
 		}
