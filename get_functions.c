@@ -14,8 +14,8 @@ void(*get_functions(char *format, int i))(va_list, char *, char *, char *, int*)
 	int v = 0;
 	clf options[] = {
 		{"c", _printf_c},
-		/**{"s", _printf-s},
-		   {"%", _printf-per},**/
+		{"s", _printf_s},
+		{"%", _printf_per},
 		{NULL, NULL}};
 	while(options[v].op != NULL)
 	{
