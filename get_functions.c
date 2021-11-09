@@ -16,6 +16,8 @@ void(*get_functions(char *format, int i))(va_list, char *, char *, char *, int*)
 		{"c", _printf_c},
 		{"s", _printf_s},
 		{"%", _printf_per},
+		{"d", _printf_d},
+		{"i", _printf_i},
 		{NULL, NULL}};
 	while(options[v].op != NULL)
 	{
