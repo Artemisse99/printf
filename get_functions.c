@@ -15,7 +15,7 @@ void(*get_functions(char *format, int i))(va_list, char*, char*, char*, int*)
 	clf options[] = {
 		{"c", _printf_c},
 		{"s", _printf_s},
-		{"%", _printf_per},
+		{"%", _printf_p},
 		{"d", _printf_d},
 		{"i", _printf_i},
 		{NULL, NULL}};
