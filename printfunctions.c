@@ -31,8 +31,7 @@ void _printf_c(va_list arg, char *buffer, char *strtmp, char *tmp,
  * @strtmp: Pointer to hold values temporarily
  * @indj: Index that holds the position on buffer
  */
-void _printf_s(va_list arg, char *buffer, char *strtmp, char *tmp,
-int *indj)
+void _printf_s(va_list arg, char *buffer, char *strtmp, char *tmp, int *indj)
 {
 	tmp = tmp;
 
@@ -75,14 +74,13 @@ int *indj)
 /**
  * _printf_d - Function pointed to to assist in print a decimal.
  * Return: Void.
- * @arguments: Variadic arguements.
+ * @arg: Variadic arguements.
  * @buffer: Array in which what is to be printed is allocated.
  * @tmp: Array to hold values temporarily.
  * @strtmp: Pointer to hold values temporarily.
- * @j: Index that holds the position on buffer.
+ * @indj: Index that holds the position on buffer.
  */
-void _printf_d(va_list arg, char *buffer, char *tmp,
-char *strtmp, int *indj)
+void _printf_d(va_list arg, char *buffer, char *tmp, char *strtmp, int *indj)
 {
 	strtmp = strtmp;
 
@@ -90,9 +88,16 @@ char *strtmp, int *indj)
 	_strcpy(&buffer[*indj], tmp);
 	*indj = *indj + _strlen(tmp);
 }
-
-void _printf_i(va_list arg, char *buffer, char *tmp, char *strtmp,
-int *indj)
+/**
+ *_printf_i - print int
+ *Return: Void.
+ * @arg: Variadic arguements.
+ * @buffer: Array in which what is to be printed is allocated.
+ * @tmp: Array to hold values temporarily.
+ * @strtmp: Pointer to hold values temporarily.
+ * @indj: Index that holds the position on buffer.
+ */
+void _printf_i(va_list arg, char *buffer, char *tmp, char *strtmp, int *indj)
 {
 	strtmp = strtmp;
 
