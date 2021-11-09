@@ -5,9 +5,11 @@
 #include <stdio.h>
 /**
  * _printf_c - print characters
- * @arguments: gjhgkj
- * @buffer: jhvjhjh
- * @strmp: hikjhojh
+ * @arg: Variadic arguements
+ * @buffer: Array in which what is to be printed is allocated
+ * @tmp: Array to hold values temporarily
+ * @strtmp: Pointer to hold values temporarily
+ * @indj: Index that holds the position on buffer
  */
 void _printf_c(va_list arg, char *buffer, char *strtmp, char *tmp,
 		  int *indj)
@@ -27,7 +29,7 @@ void _printf_c(va_list arg, char *buffer, char *strtmp, char *tmp,
  * @buffer: Array in which what is to be printed is allocated
  * @tmp: Array to hold values temporarily
  * @strtmp: Pointer to hold values temporarily
- * @j: Index that holds the position on buffer
+ * @indj: Index that holds the position on buffer
  */
 void _printf_s(va_list arg, char *buffer, char *strtmp, char *tmp,
 int *indj)
