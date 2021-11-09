@@ -49,3 +49,52 @@ int *indj)
 		*indj = *indj + _strlen(strtmp);
 	}
 }
+
+/**
+ * _printf_percent - Function pointed to to assist in print a %
+ * Return: Void.
+ * @arg: Variadic arguements
+ * @buffer: Array in which what is to be printed is allocated
+ * @tmp: Array to hold values temporarily
+ * @strtmp: Pointer to hold values temporarily
+ * @indj: Index that holds the position on buffer
+ */
+void _printf_per(va_list arg, char *buffer, char *strtmp, char *tmp,
+int *indj)
+{
+	arg = arg;
+	tmp = tmp;
+
+	strtmp = "%";
+	_strcpy(&buffer[*indj], strtmp);
+	*indj = *indj + _strlen(strtmp);
+}
+
+/**
+ * _printf_d - Function pointed to to assist in print a decimal.
+ * Return: Void.
+ * @arguments: Variadic arguements.
+ * @buffer: Array in which what is to be printed is allocated.
+ * @tmp: Array to hold values temporarily.
+ * @strtmp: Pointer to hold values temporarily.
+ * @j: Index that holds the position on buffer.
+ */
+void _printf_d(va_list arg, char *buffer, char *tmp,
+char *strtmp, int *indj)
+{
+	strtmp = strtmp;
+
+	_itoa(va_arg(arg, int), tmp, 10);
+	_strcpy(&buffer[*indj], tmp);
+	*indj = *indj + _strlen(tmp);
+}
+
+void _printf_i(va_list arg, char *buffer, char *tmp, char *strtmp,
+int *indj)
+{
+	strtmp = strtmp;
+
+	_itoa(va_arg(arg, int), tmp, 10);
+	_strcpy(&buffer[*indj], tmp);
+	*indj = *indj + _strlen(tmp);
+}
