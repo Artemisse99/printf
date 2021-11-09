@@ -52,7 +52,7 @@ void _printf_s(va_list arg, char *buffer, char *strtmp, char *tmp, int *indj)
 }
 
 /**
- * _printf_percent - Function pointed to to assist in print a %
+ * _printf_p - Function pointed to to assist in print a %
  * Return: Void.
  * @arg: Variadic arguements
  * @buffer: Array in which what is to be printed is allocated
@@ -60,7 +60,7 @@ void _printf_s(va_list arg, char *buffer, char *strtmp, char *tmp, int *indj)
  * @strtmp: Pointer to hold values temporarily
  * @indj: Index that holds the position on buffer
  */
-void _printf_per(va_list arg, char *buffer, char *strtmp, char *tmp,
+void _printf_p(va_list arg, char *buffer, char *strtmp, char *tmp,
 int *indj)
 {
 	arg = arg;
